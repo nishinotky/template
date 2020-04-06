@@ -1,23 +1,15 @@
-// PC
-.hidden-pc {
-
-	@include mq("pc") {
-		display: none;
+// br
+br {
+	&.pc-only {
+		display: inline-block;
+		@include mq("sp") {
+			display: none;
+		}
 	}
-}
-
-// タブレット
-.hidden-tab {
-
-	@include mq("tab-only") {
+	&.sp-only {
 		display: none;
-	}
-}
-
-// スマホ
-.hidden-sp {
-
-	@include mq("sp") {
-		display: none;
+		@include mq("sp") {
+			display: inline-block;
+		}
 	}
 }
