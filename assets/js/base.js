@@ -1,5 +1,4 @@
 // UA
-let viewport = document.querySelector('[name="viewport"]');
 let _ua = (function (u) {
   return {
   Tablet:(u.indexOf("windows") != -1 && u.indexOf("touch") != -1 && u.indexOf("tablet pc") == -1)
