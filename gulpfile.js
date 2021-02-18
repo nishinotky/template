@@ -4,6 +4,7 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sassGlob = require('gulp-sass-glob');
+const sourcemaps = require('gulp-sourcemaps');
 const mmq = require('gulp-merge-media-queries');
 const cssdeclsort = require('css-declaration-sorter');
 const through2 = require('through2');
@@ -40,6 +41,7 @@ function browserSyncFunc(done) {
 function sassFunc(done) {
   gulp
     .src('./assets/sass/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(postcss([autoprefixer()]))
     .pipe(postcss([cssdeclsort({order: 'alphabetically'})]))
@@ -51,6 +53,7 @@ function sassFunc(done) {
       chunk.stat.mtime = date;
       callback(null, chunk);
     }))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./assets/css/'));
   done();
 }

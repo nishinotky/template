@@ -140,3 +140,6 @@ window.onload = function () {
   window.deSVG = desvg;
   deSVG('.svg_img', true);
 }
+
+// Lazy Load
+lazyload();

@@ -1,3 +1,5 @@
+$ff-noto: 'Noto Sans JP', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+
 $ff-kgpw3: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", sans-serif;
 $ff-kgpw6: "HiraKakuPro-W6", "ヒラギノ角ゴ Pro W6", sans-serif;
 
@@ -9,6 +11,6 @@ $ff-awesome: "Font Awesome 5 Free", sans-serif;
 $ff-code: monospace, sans-serif;
 
 $fz-base: 1.6rem;
-$ff-base: $ff-gothic;
-$fw-base: 500;
+$ff-base: $ff-noto;
+$fw-base: 400;
 $lh-base: 1.6;

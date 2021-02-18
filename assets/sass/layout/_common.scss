@@ -1,7 +1,52 @@
+html, body {
+  min-width: 1200px;
+  @include mq("sp") {
+      min-width: auto;
+  }
+}
+body {
+  position: relative;
+}
+a.hover {
+  transition: opacity .3s;
+  &:hover {
+      opacity: .7;
+  }
+}
 .wrap {
   width: 1200px;
   margin: 0 auto;
   @include mq("sp") {
-    width: 100%;
-	}
+      width: 100%;
+  }
+}
+/* ローディング画面 */
+#site_loader_overlay {
+  width: 100vw;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+#site_loader_spinner {
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+  background-color: #000;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+@keyframes sk-scaleout {
+  0% {
+      transform: scale(0);
+  } 100% {
+      transform: scale(1.0);
+      opacity: 0;
+  }
 }

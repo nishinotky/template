@@ -2,25 +2,26 @@ doctype html
 html(lang='ja')
   head
     meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    script
+      | let w=screen.width,d;if(768>w)d='375';else d='1200';document.write('<meta name="viewport" content="width='+d+'">');
+    //- meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible' content='ie=edge')
     title Template
     meta(name='description', content='')
     meta(name='keywords', content='')
-    link(rel='stylesheet' href='//unpkg.com/swiper/css/swiper.css')
-    link(rel='stylesheet' href='//unpkg.com/swiper/css/swiper.min.css')
-    link(rel='stylesheet' href='./assets/css/style.css')
-    script(src='//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js' defer)
-    script(src='//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js' defer)
-    script(src='//cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js' defer)
-    script(src='//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js' defer)
-    script(src='./assets/js/base.js' defer)
-    script(src='./assets/js/script.js' defer)
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap')
+    link(rel='stylesheet', href='/assets/css/style.css')
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js', defer)
+    script(src='/assets/js/lazyload.min.js', defer)
+    script(src='/assets/js/picturefill.min.js', defer)
+    script(src='/assets/js/base.js', defer)
+    script(src='/assets/js/script.js', defer)
   body
-    .wrap
-      h1 Template
-      h2 Test
-      .img
-        picture
-          source(media='(max-width: 768px)' srcset='//picsum.photos/500/400')
-          img(src='//picsum.photos/1000/800' alt='')
+    #site_loader_overlay
+      #site_loader_spinner
+    //- .img
+    //-   picture
+    //-     source(media='(max-width: 768px)', srcset='//picsum.photos/500/400')
+    //-     img(src='//picsum.photos/1000/800', alt='')
+    //- img(loading='lazy', data-src='//picsum.photos/1000/800', src='//picsum.photos/1000/800', class='lazyload', alt='CONTACT')
